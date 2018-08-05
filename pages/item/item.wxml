@@ -1,0 +1,19 @@
+<view class='container'>
+  <image class='background' src='{{movie.images.large}}' mode="aspectFill"></image>
+  <block>
+    <view class='main'>
+      <image src='{{movie.images.large}}' mode="aspectFit"></image>
+      <text class='m-title center'>{{movie.title}}({{movie.year}})</text>
+      <text class='m-desc'>评分：{{movie.rating.average}}</text>
+      <text class='m-desc'>导演：<block wx:for="{{ movie.directors }}" wx:key="id"> {{ item.name }} </block></text>
+      <text class='m-desc'>主演：<block wx:for="{{ movie.casts }}" wx:key="id"> {{ item.name }} </block></text>
+    </view>
+
+    <view class='summary'>
+      <view class='sum-title'>摘要：</view>
+      <view class='sum-content'>
+     {{movie.summary}}
+      </view>
+    </view>
+  </block>
+</view>

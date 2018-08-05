@@ -1,0 +1,21 @@
+<template name="item1">
+   <navigator url="../item/item?id={{item.id}}">
+    <view class='item'>
+        <image src='{{item.images.small}}'></image>
+       <view class='desc'>
+          <text class='l-title'>{{item.title}}</text>
+          <text class='s-title'>{{item.title}}-{{item.year}}</text>
+          <view class='director'>导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></view>
+       </view>
+       <view class='score'>
+          <text>{{item.rating.average}}分</text>
+       </view>
+    </view>
+  </navigator>
+</template>
+
+<template name="movieItem">
+  <view class="list">
+    <template is="item1" data="{{ item }}" wx:for="{{ movies }}" wx:key="id"/>
+  </view>
+</template>

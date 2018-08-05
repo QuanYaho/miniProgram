@@ -1,0 +1,2 @@
+<import src="../common/movie-list/movie-list"/>
+<template is="movieItem" data="{{movies,loading,hasMore}}" wx:for="{{ movies }}" wx:key="id"></template>
